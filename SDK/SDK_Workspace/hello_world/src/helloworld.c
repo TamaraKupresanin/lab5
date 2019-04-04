@@ -59,11 +59,19 @@ int main()
 
     print("Hello World\n\r");
 
+
     clear_text_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
     clear_graphics_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
+    set_foreground(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR,0xff0000);
+    set_background(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR,0x66ff66);
+
     draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
     set_cursor(350);
     print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, string_s, 6);
+    set_cursor(450);
+    //print_char(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR,'B');
+    move(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, string_s, 6);
+    //clear_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
 
 
     return 0;
